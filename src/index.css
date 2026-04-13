@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    --primary: 213 80% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 94%;
+    --secondary-foreground: 215 25% 25%;
+
+    --muted: 210 15% 92%;
+    --muted-foreground: 215 15% 45%;
+
+    --accent: 213 75% 95%;
+    --accent-foreground: 213 80% 35%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 145 60% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 90% 50%;
+    --warning-foreground: 38 90% 15%;
+
+    --info: 200 80% 45%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 213 80% 42%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Severity colors */
+    --severity-low: 145 60% 40%;
+    --severity-low-bg: 145 60% 95%;
+    --severity-medium: 38 90% 50%;
+    --severity-medium-bg: 38 90% 95%;
+    --severity-high: 0 70% 50%;
+    --severity-high-bg: 0 70% 95%;
+
+    /* Entity tag colors */
+    --entity-vehicle: 213 80% 42%;
+    --entity-vehicle-bg: 213 80% 95%;
+    --entity-location: 145 60% 40%;
+    --entity-location-bg: 145 60% 95%;
+    --entity-violation: 0 70% 50%;
+    --entity-violation-bg: 0 70% 95%;
+    --entity-time: 270 60% 50%;
+    --entity-time-bg: 270 60% 95%;
+    --entity-zone: 38 90% 45%;
+    --entity-zone-bg: 38 90% 95%;
+    --entity-other: 215 15% 45%;
+    --entity-other-bg: 210 15% 95%;
+  }
+
+  .dark {
+    --background: 215 25% 10%;
+    --foreground: 210 20% 95%;
+
+    --card: 215 25% 13%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 215 25% 13%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 213 80% 55%;
+    --primary-foreground: 215 25% 10%;
+
+    --secondary: 215 20% 20%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 215 20% 18%;
+    --muted-foreground: 215 15% 60%;
+
+    --accent: 213 60% 20%;
+    --accent-foreground: 213 80% 70%;
+
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 145 50% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 80% 55%;
+    --warning-foreground: 38 90% 10%;
+
+    --info: 200 70% 50%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 215 20% 22%;
+    --input: 215 20% 22%;
+    --ring: 213 80% 55%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --severity-low: 145 50% 50%;
+    --severity-low-bg: 145 40% 15%;
+    --severity-medium: 38 80% 55%;
+    --severity-medium-bg: 38 70% 15%;
+    --severity-high: 0 60% 55%;
+    --severity-high-bg: 0 50% 15%;
+
+    --entity-vehicle: 213 70% 60%;
+    --entity-vehicle-bg: 213 60% 15%;
+    --entity-location: 145 50% 55%;
+    --entity-location-bg: 145 40% 15%;
+    --entity-violation: 0 60% 55%;
+    --entity-violation-bg: 0 50% 15%;
+    --entity-time: 270 50% 60%;
+    --entity-time-bg: 270 40% 15%;
+    --entity-zone: 38 70% 55%;
+    --entity-zone-bg: 38 60% 15%;
+    --entity-other: 215 15% 60%;
+    --entity-other-bg: 215 15% 18%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .entity-tag {
+    @apply inline-flex items-center px-2.5 py-1 rounded-md text-sm font-medium;
+  }
+
+  .entity-vehicle {
+    background-color: hsl(var(--entity-vehicle-bg));
+    color: hsl(var(--entity-vehicle));
+  }
+
+  .entity-location {
+    background-color: hsl(var(--entity-location-bg));
+    color: hsl(var(--entity-location));
+  }
+
+  .entity-violation {
+    background-color: hsl(var(--entity-violation-bg));
+    color: hsl(var(--entity-violation));
+  }
+
+  .entity-time {
+    background-color: hsl(var(--entity-time-bg));
+    color: hsl(var(--entity-time));
+  }
+
+  .entity-zone {
+    background-color: hsl(var(--entity-zone-bg));
+    color: hsl(var(--entity-zone));
+  }
+
+  .entity-other {
+    background-color: hsl(var(--entity-other-bg));
+    color: hsl(var(--entity-other));
+  }
+
+  .severity-low {
+    background-color: hsl(var(--severity-low-bg));
+    color: hsl(var(--severity-low));
+  }
+
+  .severity-medium {
+    background-color: hsl(var(--severity-medium-bg));
+    color: hsl(var(--severity-medium));
+  }
+
+  .severity-high {
+    background-color: hsl(var(--severity-high-bg));
+    color: hsl(var(--severity-high));
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-pulse-subtle {
+    animation: pulseSubtle 2s ease-in-out infinite;
+  }
+
+  @keyframes pulseSubtle {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "activation": "gelu",
+  "architectures": [
+    "DistilBertForSequenceClassification"
+  ],
+  "attention_dropout": 0.1,
+  "dim": 768,
+  "dropout": 0.1,
+  "hidden_dim": 3072,
+  "id2label": {
+    "0": "ENVIRONMENTAL",
+    "1": "METER_PAYMENT",
+    "2": "NO_PARKING_ZONES",
+    "3": "OBSTRUCTION",
+    "4": "PERMIT_VIOLATIONS",
+    "5": "REPEAT_OFFENSES",
+    "6": "RESTRICTED_AREAS",
+    "7": "SAFETY_HAZARDS",
+    "8": "TRAFFIC_FLOW"
+  },
+  "initializer_range": 0.02,
+  "label2id": {
+    "ENVIRONMENTAL": 0,
+    "METER_PAYMENT": 1,
+    "NO_PARKING_ZONES": 2,
+    "OBSTRUCTION": 3,
+    "PERMIT_VIOLATIONS": 4,
+    "REPEAT_OFFENSES": 5,
+    "RESTRICTED_AREAS": 6,
+    "SAFETY_HAZARDS": 7,
+    "TRAFFIC_FLOW": 8
+  },
+  "max_position_embeddings": 512,
+  "model_type": "distilbert",
+  "n_heads": 12,
+  "n_layers": 6,
+  "pad_token_id": 0,
+  "problem_type": "single_label_classification",
+  "qa_dropout": 0.1,
+  "seq_classif_dropout": 0.2,
+  "sinusoidal_pos_embds": false,
+  "tie_weights_": true,
+  "torch_dtype": "float32",
+  "transformers_version": "4.53.3",
+  "vocab_size": 30522
+}
